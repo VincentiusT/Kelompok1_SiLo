@@ -25,6 +25,10 @@ public class DBHandler {
         //update data to database
 
     }
+    
+    public void changeStatus(String status) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public String[] getInvoiceDescriptionDB() {
         return null;
@@ -38,4 +42,6 @@ public class DBHandler {
     String[] getListInvoice(String keyword) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+ 
 }

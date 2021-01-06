@@ -26,4 +26,8 @@ public class InvoiceCtl {
     private Invoice[] createInvoice(String[] result) {
         return null;
     }
+
+    void requestChangeStatus(String status) {
+        dbHandler.changeStatus(status);
+    }
 }
