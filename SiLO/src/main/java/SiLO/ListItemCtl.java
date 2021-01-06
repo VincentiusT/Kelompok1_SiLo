@@ -27,7 +27,7 @@ public class ListItemCtl {
     private Mainpage mainpage;
     
     public void searchItem(String keyword){
-        //cari item
+        //dbHandler.searchItem(keyword);
     }
 }
 

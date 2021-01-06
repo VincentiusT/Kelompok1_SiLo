@@ -19,7 +19,8 @@ public class Mainpage extends javax.swing.JFrame {
         initComponents();
         jPanel1.setVisible(false);
         jPanel2.setVisible(false);
-        addNewDNForm = new DeliveryNoteForm();
+        deliveryNoteForm = new DeliveryNoteForm();
+        deliveryNoteCtl = new DeliveryNoteCtl(deliveryNoteForm);
         addNewItemForm = new ItemForm(1);
         editItemForm = new ItemForm(2);
         itemCtl = new ItemCtl(addNewItemForm, editItemForm);
@@ -54,6 +55,8 @@ public class Mainpage extends javax.swing.JFrame {
         itemMI = new javax.swing.JMenu();
         invoiceMI = new javax.swing.JMenu();
         deliveryNotesMI = new javax.swing.JMenu();
+        createDeliveryNoteMenu = new javax.swing.JMenu();
+        viewDeliveryNoteMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,6 +223,18 @@ public class Mainpage extends javax.swing.JFrame {
         menuMB.add(invoiceMI);
 
         deliveryNotesMI.setText("Delivery Notes");
+
+        createDeliveryNoteMenu.setText("Create Delivery Note");
+        createDeliveryNoteMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                createDeliveryNoteMenuMouseClicked(evt);
+            }
+        });
+        deliveryNotesMI.add(createDeliveryNoteMenu);
+
+        viewDeliveryNoteMenu.setText("View Delivery Notes List");
+        deliveryNotesMI.add(viewDeliveryNoteMenu);
+
         menuMB.add(deliveryNotesMI);
 
         setJMenuBar(menuMB);
@@ -310,6 +325,10 @@ public class Mainpage extends javax.swing.JFrame {
        detailInvoicePage.setSize(300,300);
     }
     
+    private void createDeliveryNoteMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createDeliveryNoteMenuMouseClicked
+        deliveryNoteCtl.requestDeliveryNoteForm();
+    }//GEN-LAST:event_createDeliveryNoteMenuMouseClicked
+
     public void showListItem(Item[] items) {
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
@@ -372,11 +391,13 @@ public class Mainpage extends javax.swing.JFrame {
    private ListInvoiceCtl listInvoiceCtl;
    private InvoiceCtl invoiceCtl;
     private ItemForm addNewItemForm;
-    private DeliveryNoteForm addNewDNForm;
+    private DeliveryNoteForm deliveryNoteForm;
+    private DeliveryNoteCtl deliveryNoteCtl;
     private ListItemCtl listItemCtl;
     private ItemCtl itemCtl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
+    private javax.swing.JMenu createDeliveryNoteMenu;
     private javax.swing.JMenu deliveryNotesMI;
     private javax.swing.JButton editBtn;
     private javax.swing.JMenu invoiceMI;
@@ -393,6 +414,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JButton searchItemBtn;
     private javax.swing.JTextField searchItemTF;
     private javax.swing.JButton viewBtn;
+    private javax.swing.JMenu viewDeliveryNoteMenu;
     // End of variables declaration//GEN-END:variables
 
   

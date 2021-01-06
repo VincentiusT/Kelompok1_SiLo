@@ -24,6 +24,21 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Delivery Notes"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="createDeliveryNoteMenu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Create Delivery Note"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createDeliveryNoteMenuMouseClicked"/>
+              </Events>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="viewDeliveryNoteMenu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="View Delivery Notes List"/>
+              </Properties>
+            </Menu>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
