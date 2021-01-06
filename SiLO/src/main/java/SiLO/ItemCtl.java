@@ -10,9 +10,19 @@ package SiLO;
  * @author feral
  */
 public class ItemCtl {
-
-    public void requestNewItemForm(ItemForm addNewItemForm) {
+    
+    private DBHandler dbhandler;
+    private Mainpage mainpage;
+    
+    private ItemForm addNewItemForm;
+    
+    public ItemCtl(ItemForm addNewItemForm){
+        this.addNewItemForm = addNewItemForm;
+    }
+    
+    public void requestNewItemForm() {
 //        mainpage.addNewItem.setVisible(true);
+        addNewItemForm.setVisible(true);
     }
     
     public void submit(String barcode,String description, String manufacturer, String title, String url){
@@ -21,6 +31,5 @@ public class ItemCtl {
 //        mainpage.refreshItemList();
     }
     
-    private DBHandler dbhandler;
-    private Mainpage mainpage;
+    
 }

@@ -19,7 +19,9 @@ public class Mainpage extends javax.swing.JFrame {
         initComponents();
         jPanel1.setVisible(false);
         jPanel2.setVisible(false);
-        
+        addNewDNForm = new DeliveryNoteForm();
+        addNewItemForm = new ItemForm();
+        itemCtl = new ItemCtl(addNewItemForm);
       
     }
 
@@ -212,10 +214,7 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_itemMIMouseClicked
 
     private void addBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseClicked
-        //itemCtl.requestNewItemForm(); 
-
-          addNewItemForm.setVisible(true);
-    
+        itemCtl.requestNewItemForm(); 
     }//GEN-LAST:event_addBtnMouseClicked
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
@@ -283,8 +282,8 @@ public class Mainpage extends javax.swing.JFrame {
         
     }
    
-    private ItemForm addNewItemForm = new ItemForm();
-    private DeliveryNoteForm addNewDNForm = new DeliveryNoteForm();
+    private ItemForm addNewItemForm;
+    private DeliveryNoteForm addNewDNForm;
     private ListItemCtl listItemCtl;
     private ItemCtl itemCtl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
