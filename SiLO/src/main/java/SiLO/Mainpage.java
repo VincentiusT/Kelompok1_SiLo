@@ -19,6 +19,8 @@ public class Mainpage extends javax.swing.JFrame {
         initComponents();
         jPanel1.setVisible(false);
         jPanel2.setVisible(false);
+        
+      
     }
 
     /**
@@ -202,7 +204,7 @@ public class Mainpage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemMIMouseClicked
-       // listItemCtl.getListItem();
+        //listItemCtl.getListItem();
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         addBtn.setVisible(true);
