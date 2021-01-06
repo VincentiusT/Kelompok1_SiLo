@@ -23,5 +23,9 @@ public class ListItemCtl {
     private DBHandler dbHandler;
     private Item item[];
     private Mainpage mainpage;
+    
+    public void searchItem(String keyword){
+        //cari item
+    }
 }
 

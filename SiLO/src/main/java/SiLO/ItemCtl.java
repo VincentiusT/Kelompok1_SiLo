@@ -35,15 +35,15 @@ public class ItemCtl {
     }
     
     public void submit(String barcode,String description, String manufacturer, String title, String url){
-//        mainpage.addNewItem.setVisible(false);
+        addNewItemForm.setVisible(false);
         dbhandler.insertData(barcode, description, manufacturer, title, url);
-//        mainpage.refreshItemList();
+        //mainpage.refreshItemList();
     }
     
     public void update(String barcode,String description, String manufacturer, String title, String url){
-//        mainpage.addNewItem.setVisible(false);
+        editItemForm.setVisible(false);
         dbhandler.updateData(barcode, description, manufacturer, title, url);
-//        mainpage.refreshItemList();
+        //mainpage.refreshItemList();
     }
     
     
