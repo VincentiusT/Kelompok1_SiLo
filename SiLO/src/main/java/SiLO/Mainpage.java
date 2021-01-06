@@ -91,6 +91,11 @@ public class Mainpage extends javax.swing.JFrame {
         });
 
         searchItemBtn.setText("Search Item");
+        searchItemBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchItemBtnMouseClicked(evt);
+            }
+        });
         searchItemBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchItemBtnActionPerformed(evt);
@@ -286,6 +291,9 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewBtnMouseClicked
 
+    private void searchItemBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchItemBtnMouseClicked
+        listItemCtl.searchItem(searchItemTF.toString());
+    }//GEN-LAST:event_searchItemBtnMouseClicked
 
     public void showListItem(Item[] items) {
         jPanel2.setVisible(false);
