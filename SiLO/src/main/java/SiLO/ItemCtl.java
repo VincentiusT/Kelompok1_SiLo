@@ -20,8 +20,11 @@ public class ItemCtl {
         this.addNewItemForm = addNewItemForm;
     }
     
+    public ItemCtl(){
+        
+    }
+    
     public void requestNewItemForm() {
-//        mainpage.addNewItem.setVisible(true);
         addNewItemForm.setVisible(true);
     }
     

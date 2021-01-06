@@ -20,9 +20,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel1.setVisible(false);
         jPanel2.setVisible(false);
         addNewDNForm = new DeliveryNoteForm();
-        addNewItemForm = new ItemForm();
+        addNewItemForm = new ItemForm(1);
+        editItemForm = new ItemForm(2);
         itemCtl = new ItemCtl(addNewItemForm);
-      
     }
 
     /**
@@ -282,6 +282,7 @@ public class Mainpage extends javax.swing.JFrame {
         
     }
    
+    private ItemForm editItemForm;
     private ItemForm addNewItemForm;
     private DeliveryNoteForm addNewDNForm;
     private ListItemCtl listItemCtl;
