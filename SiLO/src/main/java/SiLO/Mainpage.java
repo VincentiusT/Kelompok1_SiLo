@@ -23,7 +23,7 @@ public class Mainpage extends javax.swing.JFrame {
         addNewItemForm = new ItemForm(1);
         editItemForm = new ItemForm(2);
         itemCtl = new ItemCtl(addNewItemForm, editItemForm);
-
+        detailInvoicePage = new DetailInvoicePage();
         listInvoiceCtl = new ListInvoiceCtl();
 
     }
@@ -49,6 +49,7 @@ public class Mainpage extends javax.swing.JFrame {
         invoiceTable = new javax.swing.JTable();
         searchInvoiceTF = new javax.swing.JTextField();
         searchInvoiceBtn = new javax.swing.JButton();
+        viewBtn = new javax.swing.JButton();
         menuMB = new javax.swing.JMenuBar();
         itemMI = new javax.swing.JMenu();
         invoiceMI = new javax.swing.JMenu();
@@ -157,15 +158,26 @@ public class Mainpage extends javax.swing.JFrame {
 
         searchInvoiceBtn.setText("Search Invoice");
 
+        viewBtn.setText("View");
+        viewBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(searchInvoiceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(searchInvoiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                .addComponent(viewBtn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +188,9 @@ public class Mainpage extends javax.swing.JFrame {
                     .addComponent(searchInvoiceBtn))
                 .addGap(13, 13, 13)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(viewBtn)
+                .addContainerGap())
         );
 
         itemMI.setText("Item");
@@ -218,7 +232,7 @@ public class Mainpage extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -243,7 +257,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void invoiceMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceMIMouseClicked
         jPanel2.setVisible(true);
         jPanel1.setVisible(false);
-        listInvoiceCtl.getListInvoice();
+      //  listInvoiceCtl.getListInvoice();
         
         // TODO add your handling code here:
     }//GEN-LAST:event_invoiceMIMouseClicked
@@ -256,6 +270,7 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchItemBtnActionPerformed
 
+
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editBtnActionPerformed
@@ -263,6 +278,14 @@ public class Mainpage extends javax.swing.JFrame {
     private void editBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtnMouseClicked
         itemCtl.requestEditItemForm(); 
     }//GEN-LAST:event_editBtnMouseClicked
+
+    private void viewBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewBtnMouseClicked
+       detailInvoicePage.setVisible(true);
+       detailInvoicePage.setSize(300,300);
+       invoiceCtl.getInvoiceDescription();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewBtnMouseClicked
+
 
     public void showListItem(Item[] items) {
         jPanel2.setVisible(false);
@@ -278,6 +301,10 @@ public class Mainpage extends javax.swing.JFrame {
     public void refreshItemList(){
         listItemCtl.getListItem();
         //refresh data on table
+    }
+    
+    public void showInvoiceDescription() {
+        detailInvoicePage.setVisible(true);
     }
     /**
      * @param args the command line arguments
@@ -318,9 +345,9 @@ public class Mainpage extends javax.swing.JFrame {
 
    
     private ItemForm editItemForm;
-
+    private DetailInvoicePage detailInvoicePage;
    private ListInvoiceCtl listInvoiceCtl;
-
+   private InvoiceCtl invoiceCtl;
     private ItemForm addNewItemForm;
     private DeliveryNoteForm addNewDNForm;
     private ListItemCtl listItemCtl;
@@ -342,7 +369,10 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JTextField searchInvoiceTF;
     private javax.swing.JButton searchItemBtn;
     private javax.swing.JTextField searchItemTF;
+    private javax.swing.JButton viewBtn;
     // End of variables declaration//GEN-END:variables
+
+  
 
 
     
