@@ -15,9 +15,11 @@ public class ItemCtl {
     private Mainpage mainpage;
     
     private ItemForm addNewItemForm;
+    private ItemForm editItemForm;
     
-    public ItemCtl(ItemForm addNewItemForm){
+    public ItemCtl(ItemForm addNewItemForm, ItemForm editItemForm){
         this.addNewItemForm = addNewItemForm;
+        this.editItemForm = editItemForm;
     }
     
     public ItemCtl(){
@@ -28,9 +30,19 @@ public class ItemCtl {
         addNewItemForm.setVisible(true);
     }
     
+    public void requestEditItemForm(){
+        editItemForm.setVisible(true);
+    }
+    
     public void submit(String barcode,String description, String manufacturer, String title, String url){
 //        mainpage.addNewItem.setVisible(false);
         dbhandler.insertData(barcode, description, manufacturer, title, url);
+//        mainpage.refreshItemList();
+    }
+    
+    public void update(String barcode,String description, String manufacturer, String title, String url){
+//        mainpage.addNewItem.setVisible(false);
+        dbhandler.updateData(barcode, description, manufacturer, title, url);
 //        mainpage.refreshItemList();
     }
     

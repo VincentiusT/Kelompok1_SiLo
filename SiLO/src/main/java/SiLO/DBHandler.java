@@ -18,4 +18,8 @@ public class DBHandler {
     public void insertData(String barcode,String description, String manufacturer, String title, String url){
         //insert data to database
     }
+    
+    public void updateData(String barcode,String description, String manufacturer, String title, String url){
+        //update data to database
+    }
 }

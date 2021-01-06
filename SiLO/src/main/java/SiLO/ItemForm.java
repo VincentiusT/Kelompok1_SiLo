@@ -235,7 +235,7 @@ public class ItemForm extends javax.swing.JFrame {
     }//GEN-LAST:event_submitBtnMouseClicked
 
     private void updateBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseClicked
-        // TODO add your handling code here:
+        itemCtl.update(tf_barcode.toString(), tf_desc.toString(), tf_manufacturer.toString(), tf_title.toString(), tf_url.toString());
     }//GEN-LAST:event_updateBtnMouseClicked
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed

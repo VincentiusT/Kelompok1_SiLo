@@ -22,7 +22,7 @@ public class Mainpage extends javax.swing.JFrame {
         addNewDNForm = new DeliveryNoteForm();
         addNewItemForm = new ItemForm(1);
         editItemForm = new ItemForm(2);
-        itemCtl = new ItemCtl(addNewItemForm);
+        itemCtl = new ItemCtl(addNewItemForm, editItemForm);
 
         listInvoiceCtl = new ListInvoiceCtl();
 
@@ -43,6 +43,7 @@ public class Mainpage extends javax.swing.JFrame {
         addBtn = new javax.swing.JButton();
         searchItemTF = new javax.swing.JTextField();
         searchItemBtn = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         invoiceTable = new javax.swing.JTable();
@@ -95,6 +96,18 @@ public class Mainpage extends javax.swing.JFrame {
             }
         });
 
+        editBtn.setText("Edit");
+        editBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editBtnMouseClicked(evt);
+            }
+        });
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,7 +115,8 @@ public class Mainpage extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(addBtn)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(searchItemTF, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -118,7 +132,9 @@ public class Mainpage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addBtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBtn)
+                    .addComponent(editBtn))
                 .addContainerGap())
         );
 
@@ -240,6 +256,14 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchItemBtnActionPerformed
 
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void editBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editBtnMouseClicked
+        itemCtl.requestEditItemForm(); 
+    }//GEN-LAST:event_editBtnMouseClicked
+
     public void showListItem(Item[] items) {
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
@@ -304,6 +328,7 @@ public class Mainpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JMenu deliveryNotesMI;
+    private javax.swing.JButton editBtn;
     private javax.swing.JMenu invoiceMI;
     private javax.swing.JTable invoiceTable;
     private javax.swing.JMenu itemMI;
