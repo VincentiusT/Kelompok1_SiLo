@@ -12,9 +12,9 @@ package SiLO;
 public class ListInvoiceCtl {
     public void getListInvoice(){
        
-        String[] results =   dbHandler.getListItem();
+        String[] results =   dbHandler.getListInvoice();
         Invoice[] invoices = createInvoice(results);
-        mainpage.showListInvoice(invoices);
+        mainpage.showDetailInvoicePage(invoices);
     }
     
   
@@ -22,6 +22,12 @@ public class ListInvoiceCtl {
 
     private Invoice[] createInvoice(String[] results) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     public void searchInvoice(String keyword){
+        String[] results =   dbHandler.getListInvoice(keyword);
+        Invoice[] invoices = createInvoice(results);
+        mainpage.showListInvoice(invoices);
     }
     
     private DBHandler dbHandler;

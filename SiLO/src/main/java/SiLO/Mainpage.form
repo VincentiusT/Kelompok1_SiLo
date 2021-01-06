@@ -321,6 +321,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Search Invoice"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchInvoiceBtnMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="viewBtn">
           <Properties>

@@ -30,4 +30,12 @@ public class DBHandler {
         return null;
 
     }
+
+    String[] getListInvoice() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String[] getListInvoice(String keyword) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

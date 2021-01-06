@@ -162,6 +162,11 @@ public class Mainpage extends javax.swing.JFrame {
         searchInvoiceTF.setText("search invoices");
 
         searchInvoiceBtn.setText("Search Invoice");
+        searchInvoiceBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchInvoiceBtnMouseClicked(evt);
+            }
+        });
 
         viewBtn.setText("View");
         viewBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -295,6 +300,16 @@ public class Mainpage extends javax.swing.JFrame {
         listItemCtl.searchItem(searchItemTF.toString());
     }//GEN-LAST:event_searchItemBtnMouseClicked
 
+    private void searchInvoiceBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchInvoiceBtnMouseClicked
+        listInvoiceCtl.searchInvoice(searchInvoiceTF.toString());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchInvoiceBtnMouseClicked
+
+    public void showDetailInvoicePage(Invoice[] invoices){
+       detailInvoicePage.setVisible(true);
+       detailInvoicePage.setSize(300,300);
+    }
+    
     public void showListItem(Item[] items) {
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
