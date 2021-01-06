@@ -15,8 +15,9 @@ public class Mainpage extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public Mainpage() {
-        initComponents();
         
+        initComponents();
+        jPanel1.setVisible(false);
     }
 
     /**
@@ -28,6 +29,7 @@ public class Mainpage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listItem = new javax.swing.JTable();
         addBtn = new javax.swing.JButton();
@@ -40,16 +42,15 @@ public class Mainpage extends javax.swing.JFrame {
 
         listItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Barcode", "Title", "Description", "Manufacturer", "URL"
             }
         ));
-        this.listItem.setVisible(false);
         jScrollPane1.setViewportView(listItem);
 
         addBtn.setText("Add");
@@ -64,6 +65,25 @@ public class Mainpage extends javax.swing.JFrame {
             }
         });
         this.addBtn.setVisible(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(addBtn)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addBtn)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
 
         itemMI.setText("Item");
         itemMI.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,20 +106,16 @@ public class Mainpage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addBtn))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(addBtn)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,8 +123,7 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void itemMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemMIMouseClicked
        // listItemCtl.getListItem();
-        listItem.setVisible(true);
-        listItem.setSize(300,300);
+        jPanel1.setVisible(true);
         addBtn.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_itemMIMouseClicked
@@ -126,8 +141,7 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_addBtnActionPerformed
 
     public void showListItem(Item[] items) {
-        listItem.setVisible(true);
-        listItem.setSize(300,300);
+        jPanel1.setVisible(true);
         addBtn.setVisible(true);
     }
     
@@ -181,6 +195,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JMenu deliveryNotesMI;
     private javax.swing.JMenu invoiceMI;
     private javax.swing.JMenu itemMI;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable listItem;
     private javax.swing.JMenuBar menuMB;
