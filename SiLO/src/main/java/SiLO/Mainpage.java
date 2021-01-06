@@ -18,6 +18,7 @@ public class Mainpage extends javax.swing.JFrame {
         
         initComponents();
         jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
     }
 
     /**
@@ -33,6 +34,13 @@ public class Mainpage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listItem = new javax.swing.JTable();
         addBtn = new javax.swing.JButton();
+        searchItemTF = new javax.swing.JTextField();
+        searchItemBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listItem1 = new javax.swing.JTable();
+        searchInvoiceTF = new javax.swing.JTextField();
+        searchInvoiceBtn = new javax.swing.JButton();
         menuMB = new javax.swing.JMenuBar();
         itemMI = new javax.swing.JMenu();
         invoiceMI = new javax.swing.JMenu();
@@ -66,23 +74,86 @@ public class Mainpage extends javax.swing.JFrame {
         });
         this.addBtn.setVisible(false);
 
+        searchItemTF.setText("search items");
+        searchItemTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchItemTFActionPerformed(evt);
+            }
+        });
+
+        searchItemBtn.setText("Search Item");
+        searchItemBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchItemBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(addBtn)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(searchItemTF, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(searchItemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchItemTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchItemBtn))
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addBtn)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        searchItemBtn.getAccessibleContext().setAccessibleName("searchItemBtn");
+
+        listItem1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Invoice Number", "PO Number", "Supplier Name", "Order Date", "Delivery Date", "Status"
+            }
+        ));
+        jScrollPane2.setViewportView(listItem1);
+
+        searchInvoiceTF.setText("search invoices");
+
+        searchInvoiceBtn.setText("Search Invoice");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(searchInvoiceTF, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(searchInvoiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchInvoiceTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchInvoiceBtn))
+                .addGap(13, 13, 13)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         itemMI.setText("Item");
@@ -94,6 +165,11 @@ public class Mainpage extends javax.swing.JFrame {
         menuMB.add(itemMI);
 
         invoiceMI.setText("Invoice");
+        invoiceMI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                invoiceMIMouseClicked(evt);
+            }
+        });
         menuMB.add(invoiceMI);
 
         deliveryNotesMI.setText("Delivery Notes");
@@ -106,16 +182,20 @@ public class Mainpage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,6 +203,7 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void itemMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemMIMouseClicked
        // listItemCtl.getListItem();
+        jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         addBtn.setVisible(true);
         // TODO add your handling code here:
@@ -130,8 +211,7 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void addBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseClicked
         //itemCtl.requestNewItemForm(); 
-//        addNewItem.setVisible(true);
-//        addNewItem.setSize(300,300);
+
           addNewItemForm.setVisible(true);
     
     }//GEN-LAST:event_addBtnMouseClicked
@@ -140,7 +220,22 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addBtnActionPerformed
 
+    private void invoiceMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceMIMouseClicked
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_invoiceMIMouseClicked
+
+    private void searchItemTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchItemTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchItemTFActionPerformed
+
+    private void searchItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchItemBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchItemBtnActionPerformed
+
     public void showListItem(Item[] items) {
+        jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         addBtn.setVisible(true);
     }
@@ -196,9 +291,16 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JMenu invoiceMI;
     private javax.swing.JMenu itemMI;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable listItem;
+    private javax.swing.JTable listItem1;
     private javax.swing.JMenuBar menuMB;
+    private javax.swing.JButton searchInvoiceBtn;
+    private javax.swing.JTextField searchInvoiceTF;
+    private javax.swing.JButton searchItemBtn;
+    private javax.swing.JTextField searchItemTF;
     // End of variables declaration//GEN-END:variables
 
     
