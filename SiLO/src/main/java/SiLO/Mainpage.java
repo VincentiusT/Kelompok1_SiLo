@@ -23,6 +23,9 @@ public class Mainpage extends javax.swing.JFrame {
         addNewItemForm = new ItemForm(1);
         editItemForm = new ItemForm(2);
         itemCtl = new ItemCtl(addNewItemForm);
+
+        listInvoiceCtl = new ListInvoiceCtl();
+
     }
 
     /**
@@ -42,7 +45,7 @@ public class Mainpage extends javax.swing.JFrame {
         searchItemBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        listItem1 = new javax.swing.JTable();
+        invoiceTable = new javax.swing.JTable();
         searchInvoiceTF = new javax.swing.JTextField();
         searchInvoiceBtn = new javax.swing.JButton();
         menuMB = new javax.swing.JMenuBar();
@@ -121,7 +124,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         searchItemBtn.getAccessibleContext().setAccessibleName("searchItemBtn");
 
-        listItem1.setModel(new javax.swing.table.DefaultTableModel(
+        invoiceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -132,7 +135,7 @@ public class Mainpage extends javax.swing.JFrame {
                 "Invoice Number", "PO Number", "Supplier Name", "Order Date", "Delivery Date", "Status"
             }
         ));
-        jScrollPane2.setViewportView(listItem1);
+        jScrollPane2.setViewportView(invoiceTable);
 
         searchInvoiceTF.setText("search invoices");
 
@@ -222,8 +225,10 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void invoiceMIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invoiceMIMouseClicked
-        jPanel1.setVisible(false);
         jPanel2.setVisible(true);
+        jPanel1.setVisible(false);
+        listInvoiceCtl.getListInvoice();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_invoiceMIMouseClicked
 
@@ -239,6 +244,11 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         addBtn.setVisible(true);
+    }
+    
+      public void showListInvoice(Invoice[] invoices) {
+        jPanel2.setVisible(false);
+        jPanel1.setVisible(true); 
     }
     
     public void refreshItemList(){
@@ -281,8 +291,12 @@ public class Mainpage extends javax.swing.JFrame {
         }); 
         
     }
+
    
     private ItemForm editItemForm;
+
+   private ListInvoiceCtl listInvoiceCtl;
+
     private ItemForm addNewItemForm;
     private DeliveryNoteForm addNewDNForm;
     private ListItemCtl listItemCtl;
@@ -291,19 +305,20 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JButton addBtn;
     private javax.swing.JMenu deliveryNotesMI;
     private javax.swing.JMenu invoiceMI;
+    private javax.swing.JTable invoiceTable;
     private javax.swing.JMenu itemMI;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable listItem;
-    private javax.swing.JTable listItem1;
     private javax.swing.JMenuBar menuMB;
     private javax.swing.JButton searchInvoiceBtn;
     private javax.swing.JTextField searchInvoiceTF;
     private javax.swing.JButton searchItemBtn;
     private javax.swing.JTextField searchItemTF;
     // End of variables declaration//GEN-END:variables
+
 
     
 }
