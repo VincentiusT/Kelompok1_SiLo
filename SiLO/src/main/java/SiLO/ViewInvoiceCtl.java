@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package silo;
+package SiLO;
 
 /**
  *
@@ -15,10 +15,10 @@ public class ViewInvoiceCtl {
     private Mainpage mainpage;
     
     public void getListOfInvoice() {
-        String[] result = dbHandler.getListOfInvoice();
-        Invoice[] invoice = createInvoice(result);
+       // String[] result = dbHandler.getListOfInvoice();
+        //Invoice[] invoice = createInvoice(result);
         
-        mainpage.showListOfInvoice(invoice);
+        //mainpage.showListOfInvoice(invoice);
     }
 
     private Invoice[] createInvoice(String[] result) {
@@ -26,9 +26,9 @@ public class ViewInvoiceCtl {
     }
 
     void searchItem(String text) {
-        String[] result = dbHandler.searchInvoice(text);
-        Invoice[] invoice = createInvoice(result);
+        //String[] result = dbHandler.searchInvoice(text);
+        //Invoice[] invoice = createInvoice(result);
         
-        mainpage.showListOfInvoice(invoice);
+        //mainpage.showListOfInvoice(invoice);
     }
 }

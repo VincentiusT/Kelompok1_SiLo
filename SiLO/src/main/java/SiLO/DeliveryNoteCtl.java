@@ -13,8 +13,19 @@ public class DeliveryNoteCtl {
     
     private DeliveryNoteForm deliveryNoteForm;
     
+    public DeliveryNoteCtl(){
+        
+    }
+    
     public DeliveryNoteCtl(DeliveryNoteForm deliveryNoteForm){
         this.deliveryNoteForm = deliveryNoteForm;
+    }
+    
+    public void addNewDeliveryNote(String invoiceNumber, String deliveryNoteNumber, String customerName, String orderDate, 
+            String deliveryDate , String status ){
+        //insert data ke dbhandler
+        deliveryNoteForm.setVisible(false);
+        
     }
     
     public void requestDeliveryNoteForm(){
