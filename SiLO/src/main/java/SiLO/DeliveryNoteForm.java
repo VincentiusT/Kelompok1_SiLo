@@ -16,10 +16,6 @@ public class DeliveryNoteForm extends javax.swing.JFrame {
      */
     public DeliveryNoteForm() {
         initComponents();
-        
-        deliveryNoteCtl = new DeliveryNoteCtl();
-        confirmationMessage = new ConfirmationMessage();
-        confirmationMessage.setVisible(false);
     }
 
     /**
@@ -32,141 +28,30 @@ public class DeliveryNoteForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        invoiceNumberTF = new javax.swing.JTextField();
-        deliveryNoteNumberTF = new javax.swing.JTextField();
-        customerNameTF = new javax.swing.JTextField();
-        orderDateTF = new javax.swing.JTextField();
-        deliveryDateTF = new javax.swing.JTextField();
-        statusTF = new javax.swing.JTextField();
-        createButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Invoice Number");
-
-        jLabel2.setText("Delivery Note Number");
-
-        jLabel3.setText("Customer Name");
-
-        jLabel4.setText("Order Date");
-
-        jLabel5.setText("Delivery Date ");
-
-        jLabel6.setText("Status");
-
-        invoiceNumberTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                invoiceNumberTFActionPerformed(evt);
-            }
-        });
-
-        createButton.setText("Create");
-        createButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                createButtonMouseClicked(evt);
-            }
-        });
-        createButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("ini delivery notes form :)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(67, 67, 67)
-                                .addComponent(invoiceNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(37, 37, 37)
-                                .addComponent(deliveryNoteNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(94, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(customerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(orderDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(114, 114, 114)
-                                    .addComponent(statusTF))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(76, 76, 76)
-                                    .addComponent(deliveryDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(169, 169, 169))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(invoiceNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(deliveryNoteNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(customerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(orderDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(deliveryDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(statusTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(createButton)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(85, 85, 85)
+                .addComponent(jLabel1)
+                .addContainerGap(201, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void invoiceNumberTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_invoiceNumberTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_invoiceNumberTFActionPerformed
-
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createButtonActionPerformed
-
-    private void createButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createButtonMouseClicked
-       confirmationMessage.setVisible(true);
-    }//GEN-LAST:event_createButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -203,28 +88,7 @@ public class DeliveryNoteForm extends javax.swing.JFrame {
         });
     }
 
-    public void confirm(){
-        confirmationMessage.setVisible(false);
-        deliveryNoteCtl.addNewDeliveryNote(invoiceNumberTF.toString(),deliveryNoteNumberTF.toString(),customerNameTF.toString(),orderDateTF.toString(),
-                deliveryDateTF.toString(), statusTF.toString());
-    }
-    
-    private DeliveryNoteCtl deliveryNoteCtl;
-    private ConfirmationMessage confirmationMessage;
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createButton;
-    private javax.swing.JTextField customerNameTF;
-    private javax.swing.JTextField deliveryDateTF;
-    private javax.swing.JTextField deliveryNoteNumberTF;
-    private javax.swing.JTextField invoiceNumberTF;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField orderDateTF;
-    private javax.swing.JTextField statusTF;
     // End of variables declaration//GEN-END:variables
 }
